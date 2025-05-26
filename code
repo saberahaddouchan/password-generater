@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Vérifie si l'utilisateur a fourni un argument (longueur du mot de passe)
+if [ -z "$1" ]; then
+  echo "Usage: $0 <longueur_du_mot_de_passe>"
+  exit 1
+fi
+
+# Longueur du mot de passe à générer
+LENGTH=$1
+
+# Caractères possibles : lettres, chiffres, symboles
+CHARS='A-Za-z0-9!@#$%^&*()_+=-'
+
+# Génération du mot de passe aléatoire
+PASSWORD=$(tr -dc "$CHARS" < /dev/urandom | head -c "$LENGTH")
+
+# Affiche le mot de passe généré
+echo "Mot de passe généré : $PASSWORD"
+#!/bin/bash
+
+# Vérifie si l'utilisateur a fourni un argument (longueur du mot de passe)
+if [ -z "$1" ]; then
+  echo "Usage: $0 <longueur_du_mot_de_passe>"
+  exit 1
+fi
+
+# Longueur du mot de passe à générer
+LENGTH=$1
+
+# Caractères possibles : lettres, chiffres, symboles
+CHARS='A-Za-z0-9!@#$%^&*()_+=-'
+
+# Génération du mot de passe aléatoire
+PASSWORD=$(tr -dc "$CHARS" < /dev/urandom | head -c "$LENGTH")
+
+# Affiche le mot de passe généré
+echo "Mot de passe généré : $PASSWORD"
